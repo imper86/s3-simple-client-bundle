@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="imper86.s3_simple_client" class="Imper86\S3SimpleClient\S3Client" public="true">
+            <argument />
+        </service>
+
+        <service id="Imper86\S3SimpleClient\S3Client" alias="imper86.s3_simple_client" public="false" />
+        <service id="Imper86\S3SimpleClient\S3ClientInterface" alias="imper86.s3_simple_client" public="false" />
+    </services>
+</container>
