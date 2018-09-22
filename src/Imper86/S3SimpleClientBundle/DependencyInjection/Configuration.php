@@ -23,6 +23,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('version')->defaultValue('latest')->end()
                 ->scalarNode('region')->defaultValue('')->end()
                 ->arrayNode('credentials')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('key')->defaultValue('%env(S3_KEY)%')->end()
                         ->scalarNode('secret')->defaultValue('%env(S3_SECRET)%')->end()
